@@ -22,10 +22,10 @@
                     },
                     colors: {
                         brand: {
-                            50: '#F8F6F0',
-                            100: '#8C8C8C',
-                            800: '#111111',
-                            900: '#242424',
+                            50: '#FFFDF8',
+                            100: '#6E5A4A',
+                            800: '#E8D3B3',
+                            900: '#D6BE9D',
                             950: '#3A2D26',
                         },
                         gold: {
@@ -33,9 +33,9 @@
                             500: '#B9951D',
                             600: '#9A7614',
                         },
-                        ink: '#242424',
-                        secondary: '#8C8C8C',
-                        card: '#D7C4A1',
+                        ink: '#2F2824',
+                        secondary: '#6E5A4A',
+                        card: '#F1E4D1',
                     }
                 }
             }
@@ -43,13 +43,14 @@
     </script>
     <style>
         :root {
-            --ivory: #F8F6F0;
-            --charcoal: #111111;
+            --ivory: #FFFDF8;
+            --charcoal: #E8D3B3;
             --dark-brown: #3A2D26;
             --champagne-gold: #C9A227;
-            --ink: #242424;
-            --secondary: #8C8C8C;
-            --light-brown: #D7C4A1;
+            --gold-600: #9A7614;
+            --ink: #2F2824;
+            --secondary: #6E5A4A;
+            --light-brown: #F1E4D1;
         }
 
         body {
@@ -75,11 +76,71 @@
             border-color: rgba(201, 162, 39, 0.7);
             box-shadow: 0 20px 42px rgba(17, 17, 17, 0.13);
         }
+        .premium-living-section {
+            background: linear-gradient(135deg, rgba(255, 253, 248, 0.98), rgba(241, 228, 209, 0.92));
+            color: var(--dark-brown);
+        }
+        .premium-feature-card {
+            background: rgba(255, 253, 248, 0.94);
+            border-color: rgba(58, 45, 38, 0.16);
+            color: var(--dark-brown);
+            box-shadow: 0 14px 34px rgba(58, 45, 38, 0.08);
+        }
+        .premium-feature-card h3,
+        .premium-feature-card p {
+            color: var(--dark-brown) !important;
+        }
+        .premium-feature-card p {
+            opacity: 0.82;
+        }
+        #units {
+            background: linear-gradient(135deg, rgba(255, 253, 248, 0.98), rgba(241, 228, 209, 0.94));
+        }
+        #units .glass-card {
+            background: rgba(255, 253, 248, 0.94);
+            border-color: rgba(58, 45, 38, 0.16);
+            color: var(--dark-brown);
+            box-shadow: 0 14px 34px rgba(58, 45, 38, 0.08);
+        }
+        #units .text-white,
+        #units .text-white\/70,
+        #units .text-white\/60,
+        #units .text-white\/50,
+        #units .text-brand-100,
+        #units .text-brand-100\/70,
+        #units .text-brand-100\/60,
+        #units .text-brand-100\/50 {
+            color: var(--dark-brown) !important;
+        }
+        #units .unit-spec {
+            color: #FFFFFF !important;
+        }
+        #units .view-details-button {
+            color: #FFFFFF !important;
+        }
+        #units .unit-btn {
+            background: var(--light-brown);
+            color: var(--dark-brown);
+            border: 1px solid rgba(58, 45, 38, 0.14);
+        }
+        #units .unit-btn.active-filter {
+            background: var(--dark-brown);
+            color: #FFFFFF;
+            border-color: var(--dark-brown);
+        }
+        #units .text-gold-400,
+        #units .text-gold-500 {
+            color: var(--gold-600) !important;
+        }
+        .premium-living-section .text-gold-400,
+        .premium-living-section .text-gold-500 {
+            color: var(--gold-600) !important;
+        }
         body .text-white,
         body .text-white\/70,
         body .text-white\/60,
         body .text-white\/50 {
-            color: var(--ink) !important;
+            color: #FFFFFF !important;
         }
         body .text-brand-100,
         body [class*="text-brand-100/"] {
@@ -101,6 +162,7 @@
         body .bg-brand-800,
         body [class*="bg-brand-800/"] {
             background-color: var(--charcoal) !important;
+            color: var(--dark-brown) !important;
         }
         body .bg-brand-950 .text-white,
         body .bg-brand-950 .text-white\/70,
@@ -323,15 +385,15 @@
             </div>
         </section>
 
-        <section id="units" class="py-16 bg-brand-900/60 border-y border-brand-800">
+        <section id="units" class="py-16 border-y border-brand-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
                     <div>
-                        <div class="flex items-center gap-2 text-gold-400 font-semibold text-xs tracking-wider uppercase mb-2">
+                        <div class="flex items-center gap-2 text-gold-600 font-semibold text-xs tracking-wider uppercase mb-2">
                             <i data-lucide="key" class="w-4 h-4"></i> Tailored Accommodations
                         </div>
-                        <h2 class="text-3xl sm:text-4xl font-normal text-white font-serif">Executive Apartment Units</h2>
+                        <h2 class="text-3xl sm:text-4xl font-normal text-brand-950 font-serif">Executive Apartment Units</h2>
                     </div>
 
                     <div class="flex flex-wrap gap-2" id="unitFilters">
@@ -429,16 +491,16 @@
             </div>
         </section>
 
-        <section id="amenities" class="py-16 bg-brand-900/40 border-t border-brand-800">
+        <section id="amenities" class="premium-living-section py-16 border-t border-brand-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-2xl mx-auto mb-12">
-                    <span class="text-xs font-semibold text-gold-400 uppercase tracking-widest">Premium Living Features</span>
-                    <h2 class="text-3xl sm:text-4xl font-normal text-white font-serif mt-2">Why Stay at Dee Homes Eldoret?</h2>
+                    <span class="text-xs font-semibold text-gold-600 uppercase tracking-widest">Premium Living Features</span>
+                    <h2 class="text-3xl sm:text-4xl font-normal text-brand-950 font-serif mt-2">Why Stay at Dee Homes Eldoret?</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <div class="glass-card p-6 rounded-2xl glass-hover space-y-3">
+                    <div class="premium-feature-card glass-card p-6 rounded-2xl glass-hover space-y-3">
                         <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center">
                             <i data-lucide="shield-check" class="w-6 h-6"></i>
                         </div>
@@ -448,7 +510,7 @@
                         </p>
                     </div>
 
-                    <div class="glass-card p-6 rounded-2xl glass-hover space-y-3">
+                    <div class="premium-feature-card glass-card p-6 rounded-2xl glass-hover space-y-3">
                         <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center">
                             <i data-lucide="wifi" class="w-6 h-6"></i>
                         </div>
@@ -458,7 +520,7 @@
                         </p>
                     </div>
 
-                    <div class="glass-card p-6 rounded-2xl glass-hover space-y-3">
+                    <div class="premium-feature-card glass-card p-6 rounded-2xl glass-hover space-y-3">
                         <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center">
                             <i data-lucide="utensils" class="w-6 h-6"></i>
                         </div>
@@ -468,7 +530,7 @@
                         </p>
                     </div>
 
-                    <div class="glass-card p-6 rounded-2xl glass-hover space-y-3">
+                    <div class="premium-feature-card glass-card p-6 rounded-2xl glass-hover space-y-3">
                         <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center">
                             <i data-lucide="car" class="w-6 h-6"></i>
                         </div>
@@ -478,7 +540,7 @@
                         </p>
                     </div>
 
-                    <div class="glass-card p-6 rounded-2xl glass-hover space-y-3">
+                    <div class="premium-feature-card glass-card p-6 rounded-2xl glass-hover space-y-3">
                         <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center">
                             <i data-lucide="sparkles" class="w-6 h-6"></i>
                         </div>
@@ -488,7 +550,7 @@
                         </p>
                     </div>
 
-                    <div class="glass-card p-6 rounded-2xl glass-hover space-y-3">
+                    <div class="premium-feature-card glass-card p-6 rounded-2xl glass-hover space-y-3">
                         <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center">
                             <i data-lucide="map-pin" class="w-6 h-6"></i>
                         </div>
@@ -730,12 +792,12 @@
                             <h3 class="text-lg font-bold text-white font-serif">${unit.title}</h3>
                             <div class="text-lg font-bold text-gold-400 font-serif">${unit.priceDisplay}</div>
                             <div class="flex flex-wrap gap-1.5 pt-2 border-t border-brand-800/80">
-                                ${unit.specs.map(spec => `<span class="text-[11px] px-2 py-1 rounded bg-brand-950 text-brand-100 border border-brand-800">â€¢ ${spec}</span>`).join('')}
+                                ${unit.specs.map(spec => `<span class="unit-spec text-[11px] px-2 py-1 rounded bg-brand-950 border border-brand-800">â€¢ ${spec}</span>`).join('')}
                             </div>
                         </div>
                     </div>
                     <div class="p-5 pt-0 flex gap-2">
-                        <button onclick="openModal(${unit.id})" class="flex-1 py-2.5 rounded-xl bg-brand-950 hover:bg-[#2E241F] text-xs font-semibold text-white transition">
+                        <button onclick="openModal(${unit.id})" class="view-details-button flex-1 py-2.5 rounded-xl bg-brand-950 hover:bg-[#2E241F] text-xs font-semibold text-white transition">
                             View Details
                         </button>
                         <a href="https://wa.me/254733627979?text=Hello%20Dee%20Homes,%20I%20am%20interested%20in%20booking:${encodeURIComponent(unit.title)}" target="_blank" class="p-2.5 rounded-xl bg-gold-400 hover:bg-gold-500 text-white transition">
@@ -780,7 +842,7 @@
                 <div>
                     <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2">Amenities Included</h4>
                     <div class="grid grid-cols-2 gap-2 text-xs">
-                        ${unit.specs.map(s => `<div class="p-2 rounded-lg bg-brand-950 border border-brand-800 text-brand-100">âœ“ ${s}</div>`).join('')}
+                        ${unit.specs.map(s => `<div class="p-2 rounded-lg bg-brand-950 border border-brand-800 text-white">âœ“ ${s}</div>`).join('')}
                     </div>
                 </div>
                 <div class="pt-4 flex gap-3">
